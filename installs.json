@@ -1,0 +1,116 @@
+[
+  {
+    "institution": "Penn State University",
+    "lat": 41.101147,
+    "lng": -78.203315,
+    "date": "9/23/2024"
+  },
+  {
+    "institution": "Rush University Medical Center",
+    "lat": 41.8742625,
+    "lng": -87.6679014,
+    "date": "9/30/2024"
+  },
+  {
+    "institution": "MIT",
+    "lat": 42.3597553,
+    "lng": -71.094502,
+    "date": "10/15/2024"
+  },
+  {
+    "institution": "The Broad Institute ",
+    "lat": 42.3631409,
+    "lng": -71.0887414,
+    "date": "10/15/2024"
+  },
+  {
+    "institution": "USDA",
+    "lat": 19.7256758,
+    "lng": -155.0891666,
+    "date": "12/2/2024"
+  },
+  {
+    "institution": "DNA Polymerase Technology",
+    "lat": 38.6202878,
+    "lng": -90.2385497,
+    "date": "12/4/2024"
+  },
+  {
+    "institution": "Xiara",
+    "lat": 37.6574508,
+    "lng": -122.3997165,
+    "date": "12/10/2024"
+  },
+  {
+    "institution": "UCSF-Chow",
+    "lat": 37.763601,
+    "lng": -122.457718,
+    "date": "12/20/2024"
+  },
+  {
+    "institution": "Zymo Research",
+    "lat": 33.6861092,
+    "lng": -117.8304918,
+    "date": "1/29/2025"
+  },
+  {
+    "institution": "UC San Diego Health",
+    "lat": 32.8792438,
+    "lng": -117.2311247,
+    "date": "3/5/2025"
+  },
+  {
+    "institution": "Boehringer",
+    "lat": 48.20849,
+    "lng": 16.37208,
+    "date": "3/28/2025"
+  },
+  {
+    "institution": "SciLifeLab",
+    "lat": 59.3500959,
+    "lng": 18.0222849,
+    "date": "3/31/2025"
+  },
+  {
+    "institution": "SciLifeLab",
+    "lat": 59.3490815,
+    "lng": 18.0274072,
+    "date": "3/31/2025"
+  },
+  {
+    "institution": "St. Jude",
+    "lat": 35.1543896,
+    "lng": -90.042221,
+    "date": "4/1/2025"
+  },
+  {
+    "institution": "St. Jude",
+    "lat": 35.1543896,
+    "lng": -90.042221,
+    "date": "4/1/2025"
+  },
+  {
+    "institution": "ETH Zurich",
+    "lat": 47.5627681,
+    "lng": 7.5809473,
+    "date": "4/2/2025"
+  },
+  {
+    "institution": "Vienna BioCenter",
+    "lat": 48.18915,
+    "lng": 16.4025705,
+    "date": "4/8/2025"
+  },
+  {
+    "institution": "Techtum",
+    "lat": 59.3134142,
+    "lng": 18.1107081,
+    "date": "4/10/2025"
+  },
+  {
+    "institution": "SeqCenter",
+    "lat": 40.4728475,
+    "lng": -79.9632686,
+    "date": "4/24/2025"
+  }
+]
