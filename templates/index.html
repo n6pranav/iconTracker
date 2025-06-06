@@ -100,16 +100,47 @@ render();
         return { institution, address, date };
       });
       fetch("/bulk_import", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data)
-      }).then(r => r.json()).then(res => {
-        installs = res.success;
-        render();
-        if (res.failed.length) {
-          alert("Failed installs:\n" + res.failed.map(e => e.institution).join("\n"));
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify(data)
+}).then(r => r.json()).then(res => {
+  // Re-fetch everything to trigger count recalculation
+  fetch('/data').then(r => r.json()).then(data => {
+    installs = data;
+    render();
+    document.getElementById("install2024").innerText = installs.filter(i => new Date(i.date).getFullYear() === 2024).length;
+    document.getElementById("install2025").innerText = installs.filter(i => new Date(i.date).getFullYear() === 2025).length;
+    document.getElementById("installCount").innerText = installs.length;
+
+    const continents = {
+      "North America": loc => loc.lat >= 7 && loc.lat <= 84 && loc.lng <= -15,
+      "South America": loc => loc.lat < 13 && loc.lat >= -56 && loc.lng >= -82 && loc.lng <= -35,
+      "Europe": loc => loc.lat >= 35 && loc.lat <= 72 && loc.lng >= -25 && loc.lng <= 45,
+      "Asia": loc => loc.lat >= 0 && loc.lat <= 80 && loc.lng >= 45 && loc.lng <= 180,
+      "Africa": loc => loc.lat >= -35 && loc.lat <= 37 && loc.lng >= -20 && loc.lng <= 55,
+      "Oceania": loc => loc.lat >= -50 && loc.lat <= 0 && loc.lng >= 110 && loc.lng <= 180
+    };
+    const continentCounts = {};
+    installs.forEach(inst => {
+      for (const [name, rule] of Object.entries(continents)) {
+        if (rule(inst)) {
+          continentCounts[name] = (continentCounts[name] || 0) + 1;
+          break;
         }
-      });
+      }
+    });
+    const ul = document.getElementById("continentCounts");
+    ul.innerHTML = "";
+    for (const [continent, count] of Object.entries(continentCounts)) {
+      const li = document.createElement("li");
+      li.textContent = `${continent}: ${count}`;
+      ul.appendChild(li);
+    }
+
+    if (res.failed.length) {
+      alert("Failed installs:\\n" + res.failed.map(e => e.institution).join("\\n"));
+    }
+  });
     }
 
     function edit(index) {
